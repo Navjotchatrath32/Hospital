@@ -1,0 +1,578 @@
+/* styles.css */
+
+/* Page Loader */
+#page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    color: #007BFF;
+}
+
+/* Header */
+header {
+    background: #007BFF;
+    color: white;
+    text-align: center;
+}
+
+.header-top {
+
+text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo img {
+    max-height: 50px;
+}
+
+.header-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-grow: 1;
+    padding: 0 20px;
+}
+
+.header-info .contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.header-info .contact-info p {
+    margin: 5px 0;
+}
+
+.header-info .social-media i {
+    margin: 0 5px;
+    color: white;
+}
+
+.header-actions #menu-toggle {
+    background: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 5px;
+}
+
+#main-nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#main-nav ul li {
+    margin: 0 10px;
+}
+
+#main-nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    #menu-toggle {
+        display: inline-block;
+    }
+
+    #main-nav ul {
+        display: none;
+        flex-direction: column;
+        background: #444;
+    }
+
+    #main-nav.active ul {
+        display: flex;
+    }
+
+    #main-nav ul li {
+        margin: 10px 0;
+    }
+}
+
+/* Hero Section */
+#hero {
+    position: relative;
+    text-align: center;
+    padding: 50px 20px;
+    background: url('images/banner.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    height: 200px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#hero .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+#hero .breadcrumb {
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+#hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+#hero button {
+    background: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+/* Section Navigation Bar */
+#section-nav {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    margin-top: -4px;
+}
+
+#section-nav ul {
+    display: flex;
+    list-style: none;
+    padding: 10px 0;
+    justify-content: center;
+    margin: 0;
+}
+
+#section-nav ul li {
+    margin: 0 15px;
+}
+
+#section-nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+#section-nav ul li a.active,
+#section-nav ul li a:hover {
+    color: #007BFF;
+}
+
+#section-nav ul li a.active::after,
+#section-nav ul li a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #007BFF;
+    border-radius: 3px 3px 0;
+}
+
+/* Section Styles */
+section {
+    padding: 60px 20px;
+}
+
+section h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+/* Treatment Overview */
+#treatment-overview .overview-content {
+    display: flex;
+  }
+  
+  #treatment-overview .overview-text,
+  #treatment-overview .overview-image {
+    flex: 1; /* Both elements will take up 50% of the space */
+  }
+  
+  #treatment-overview .overview-image {
+    display: flex; /* Wrap the image in a flex container */
+    justify-content: flex-end; /* Align the image to the right within its container */
+    margin-right: 30px;
+  }
+  
+  #treatment-overview img {
+    max-width: 100%;
+    height: 300px;
+    display: block; /* Ensures the image behaves as a block element */
+}
+  
+/* General Section Styles */
+section {
+    position: relative; /* Ensure relative positioning for floating form alignment */
+    padding: 60px 20px;
+    border-bottom: 1px dotted #ddd; /* Dotted line separator */
+}
+
+/* Section Content Layout */
+.overview-content {
+    display: flex;
+    align-items: flex-start; /* Align items at the start of the flex container */
+    flex-wrap: wrap; /* Allow items to wrap if needed */
+}
+
+.overview-text {
+    flex-basis: calc(60% - 20px); /* 70% width for text content minus padding */
+    padding-right: 20px; /* Adjust spacing between text and form */
+}
+
+/* Floating Enquiry Form */
+.floating-form {
+    position: absolute; /* Position absolutely within the section */
+    top: 0;
+    right: 0;
+    background: #f0f0f0;
+    padding: 20px;
+    border-radius: 5px;
+    width: calc(30% - 20px); /* 30% width minus padding */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-right: 40px;
+}
+
+.floating-form form {
+    text-align: center;
+}
+
+.floating-form form h3 {
+    font-size: 1.5em;
+    color: #007BFF;
+}
+
+.floating-form form p {
+    margin-bottom: 10px;
+}
+
+.floating-form form input,
+.floating-form form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.floating-form form button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.floating-form form button:hover {
+    background-color: #0056b3;
+}
+
+/* Adjust dotted line to 70% width and left-align */
+section.treatment-section {
+    border-bottom-width: 0; /* Remove default border */
+    position: relative;
+}
+
+section.treatment-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0; /* Left-align the line */
+    width: 60%; /* 60% width for separator line */
+    height: 1px;
+    background: #ccc;
+}
+
+
+
+.owl-carousel .item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Doctors Section */
+.doctor-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 30%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.card img {
+    max-width: 100px;
+    border-radius: 50%;
+}
+
+/* Hospitals Section */
+.Hospital-Title{
+    text-align: center;
+}
+.section-heading{
+    text-align: center;
+}
+.hospital-cards .item {
+    text-align: center;
+}
+
+.hospital-cards .item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.faq-section {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9; /* Background color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.faq-section h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center; /* Centered title */
+}
+
+.faq-item {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    cursor: pointer; /* Pointer cursor */
+}
+
+.faq-question {
+    font-size: 18px; /* Increased font size */
+    font-weight: bold;
+    margin: 0;
+    position: relative;
+    padding-right: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.faq-question::after {
+    content: "+";
+    font-size: 20px;
+    color: #007BFF; /* Icon color */
+}
+
+.faq-answer {
+    padding: 10px 0;
+    display: none;
+    animation: fadeIn 0.3s ease-in-out; /* Smooth fade-in animation */
+}
+
+.faq-answer p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* Common Styles for Sliders */
+/* Common Styles for Sliders */
+.slider-container {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.slider-item {
+    flex: 0 0 33.3333%;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Hospital Section */
+.hospital-section {
+    padding: 40px 20px;
+}
+
+.hospital-slider .hospital-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px dotted #ccc;
+}
+
+.hospital-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Doctors Section */
+.doctor-section {
+    padding: 40px 20px;
+    background-color: #f0f0f0; /* Grey background */
+}
+
+.doctor-slider {
+    justify-content: space-between; /* Evenly distribute doctor photos */
+}
+
+.doctor-slider .doctor-item {
+    flex: 0 0 26.6666%; /* 80% of the width of hospital items */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.doctor-item img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.doctor-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: blue;
+}
+
+.hospital-name,
+.specialization {
+    font-size: 1em;
+    color: #666;
+}
+
+.navigation {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+.footer-container {
+    display: flex;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    justify-content: space-between;
+  }
+  
+  .footer-section {
+    flex: 1;
+    margin: 0 10px;
+  }
+  
+  .middle-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .horizontal-section {
+    background-color: #444;
+    padding: 10px;
+    margin: 5px 0;
+  }
+  
+  .footer-container > .footer-section {
+    margin: 0;
+  }
+  
+  .footer-container > .footer-section:not(:last-child) {
+    border-right: 1px solid white;
+  }
+  
+  footer img {
+    width: 50px;
+    height: auto;
+  }
+  
+  footer ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  footer ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-bottom {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .footer-bottom ul {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .footer-bottom ul li {
+    margin: 0 15px;
+  }
+  
+  .footer-section p, .footer-section h3 {
+    margin: 10px 0;
+  }
